@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HappyTravels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-fade fixed-top">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">link 2</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="option" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+            <a href="membership.php">
+                <button class="btn bg-primary" > Become A Member!</button>
+            </a>
+            <form action="signin.php" method="POST">
+                <button class="btn bg-primary"> Log in here</button>
+            </form>        
+        </div>
+      </nav>
+
+<!-- title section for website -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-1 text-center">Happy Travels</h1>
+      <p class="text-center display-4"> You deserve a happy vacation, we make it happen!</p>
+    </div>
+</div>
+
+  <!-- this section will have an animated plane backround with an interactive user interface displaying the 
+    cost of predetermned destinations(from data stored in an array)-->
+  
+    <section class="destinations">
+        <h1 class=" display-3 text-center">Where Do you Want To Go Today? </h1>
+                                    
+        <!-- plane animation for cute effect -->
+        <div class="scene">
+          <span class="cloud cloud--small"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" id="plane" class="plane" viewBox="0 0 104 47" x="0" y="0" width="104" height="47" background-color="#ffffff00">
+            <g id="avion">
+              <path d="M20 36C25 38 69 43 80 40 92 38 106 33 104 21 103 13 95 13 90 9 85 5 79 2 76 1 70-1 65 0 60 2 57 3 25 14 23 13 21 12 12 2 9 3 5 4 1 5 1 6 2 7 15 34 20 36Z" fill="#0085b2"/>
+              <path d="M23 36C28 37 69 43 80 40 88 38 98 34 102 29 82 32 22 36 23 36Z" stroke="#ffffff00" stroke-width="1" fill="#14647f"/>
+              <path d="M42 39C48 40 60 40 67 40 71 32 72 26 72 26L44 29C44 29 44 35 42 39Z" stroke="#ffffff00" stroke-width="1" fill="#0c3b4d"/>
+              <path d="M7 16C7 16 9 20 10 22 13 27 16 13 16 13L7 16Z" stroke="#ffffff00" stroke-width="1" fill="#0c3b4d"/>
+              <path d="M40 29C40 29 41 34 34 42 27 51 48 46 58 39 74 28 72 25 72 25L40 29Z" stroke="#ffffff00" stroke-width="1" fill="#006e96"/>
+              <path d="M5 14C5 14 6 15 3 19 1 22 10 20 13 17 19 11 17 11 17 11L5 14Z" stroke="#ffffff00" stroke-width="1" fill="#006e96"/>
+              <path d="M90 10C88 8 83 4 80 3 78 3 68 7 68 8 70 12 80 8 90 10Z" stroke="#ffffff00" stroke-width="1" fill="#0c3b4d"/>
+              <path d="M89 9C87 7 82 3 79 2 77 2 67 6 67 7 69 11 79 7 89 9Z" stroke="#ffffff00" stroke-width="1" fill="#afe2ff"/>
+            </g>
+          </svg>
+          <span class="cloud cloud--medium"></span>
+          <span class="cloud cloud--large"></span>
+        </div> <!-- end of plane animation--> 
+                                
+        <!-- form to display user destination request -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Where are you leaving from?</h1>
+                <hr>
+                <form action="findTrip.php" method="post">
+                    <div class="form-group">
+                        <select class="custom-select">
+                            <option selected> Select your location</option>
+                            <option value="1" name="NortAmerica">North America</option> 
+                            <option value="2" name="Europe">Europe</option> 
+                            <option value="3" name="Africa">Africa</option> 
+                            <option value="4" name="Asia">Asia</option> 
+                        </select>
+                    
+                    <br><br> <br>
+
+                        <select class="custom-select">
+                            <option selected> How many Guests?</option>
+                            <option value="1" name="one">1</option> 
+                            <option value="2" name="two">2</option> 
+                            <option value="3" name="three">3</option> 
+                            <option value="4" name="four">4</option> 
+                            </select>
+                    </div>   
+        </div>
+                
+                <div class="col">
+                    <h1 class="text-center">Where are ya heading?</h1>
+                    <hr>
+                    
+                    <select class="custom-select">
+                            <option selected> Select your location</option>
+                            <option value="1" name="NortAmerica">North America</option> 
+                            <option value="2" name="Europe">Europe</option> 
+                            <option value="3" name="Africa">Africa</option> 
+                            <option value="4" name="Asia">Asia</option> 
+                    </select>
+                
+                <br><br> <br>
+
+                    <select class="custom-select">
+                            <option selected>How many Rooms?</option>
+                            <option value="1" name="one">1</option> 
+                            <option value="2" name="two">2</option> 
+                            <option value="3" name="three">3</option> 
+                            <option value="4" name="four">4</option> 
+                    </select>
+                        <br><br>
+                        <button type="submit" class="btn btn-primary" name="findMyTrip" value="trip">Find My Trip!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+            <br><br>
+            
+            <div class="col-12">
+                <p class="text-center"> Please remember, members save 10% or more on our vacation packages! Sign up today and get an additional 10% off your trip!</p>
+            </div>
+        
+  </section>
+  
+  <section  class="module content">
+    <div class="parallax-container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor...</p>
+    </div>
+  </section>
+  
+  <section class="module parallax parallax-2" data-type="background" data-speed="10">
+    <div class="parallax-container">
+      <h1>Shape</h1>
+    </div>
+  </section>
+  
+  <section class="module content">
+    <div class="parallax-container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor...</p>
+    </div>
+  </section>
+  
+  <section class="module parallax parallax-3" data-type="background" data-speed="10">
+    <div class="parallax-container">
+      <h1>Color</h1>
+    </div>
+  </section>
+  
+  <section class="module content">
+    <div class="parallax-container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor...</p>
+    </div>
+  </section>
+      <footer class="footer"> 
+        <div class="container-fluid bg-primary">
+          <div class="row">
+            <div class="col-xs-6 col-md-4 left">
+      <p>&copy; MySite.com</p>
+          </div>
+            <div class="col-xs-6 col-md-4 left">
+      <a href="#">Terms &amp;Conditions</a>
+      <a href="#">About Us</a> 
+          </div>
+            <div class="col-xs-6 col-md-4 right">
+      <a href="#" class="btn btn-social-icon btn-twitter">
+      <span class="fa fa-twitter"></span>
+    </a>
+     <a href="#" class="btn btn-social-icon btn-facebook">
+      <span class="fa fa-facebook"></span>
+    </a>
+          <a href="#" class="btn btn-social-icon btn-instagram">
+      <span class="fa fa-instagram"></span>
+    </a>
+          </div>
+          </div>
+  </div>
+      </footer>
+  
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+      <script src="main.js"></script>
+</body>
+</html>
